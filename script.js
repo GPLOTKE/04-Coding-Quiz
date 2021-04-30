@@ -1,17 +1,25 @@
 // create a button that will start a timer once clicked and presents a question
+var hideContainerEl = $('#instructions');
+var showQuestionEl = $('#question1');
 
+showQuestionEl.hide();
 
-document.getElementById("startQuiz").addEventListener("click", function(){
+hideContainerEl.on('click', function () {
+    hideContainerEl.hide();
+    showQuestionEl.show();
+});
+
+document.getElementById("startQuiz").addEventListener("click", function () {
     var secondsleft = 75;
 
-    var downloadTimer = setInterval(function function1(){
-    document.getElementById("startTimer").innerHTML = secondsleft + " seconds remaining.";
+    var downloadTimer = setInterval(function function1() {
+        document.getElementById("startTimer").innerHTML = secondsleft + " seconds remaining.";
 
-    secondsleft -= 1;
-    if(secondsleft <= 0){
-        clearInterval(downloadTimer);
-        document.getElementById("startTimer").innerHTML = "Time is up!"
-    }
+        secondsleft -= 1;
+        if (secondsleft <= 0) {
+            clearInterval(downloadTimer);
+            document.getElementById("startTimer").innerHTML = "Time is up!"
+        }
     }, 1000);
 
     console.log(startTimer);
