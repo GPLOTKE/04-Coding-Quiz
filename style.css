@@ -16,3 +16,7 @@ button {
     width: 35vw;
     background-color: #f0ead6;
   }
+
+  #startTimer {
+      text-align: right;
+  }
