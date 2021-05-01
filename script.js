@@ -1,4 +1,4 @@
-// create a button that will start a timer once clicked and presents a question
+
 var showInstructionsEl = $('#instructions');
 var showQuestion1El = $('#question1');
 var showQuestion2El = $('#question2');
@@ -11,6 +11,11 @@ var showAnswerBtns3El = $('#answerBtns3');
 var showAnswerBtns4El = $('#answerBtns4');
 var showAnswerBtns5El = $('#answerBtns5');
 var showFinalScoresEl = $('#finalScores');
+var viewHighScoresEl = $('#viewHighScores');
+var submitBtnEl = $('#submitBtn');
+var submissionResponseEl = $('#response');
+var yourScoreEl = $();
+var showBodyEl = $('showBody');
 
 showQuestion1El.hide();
 showQuestion2El.hide();
@@ -19,6 +24,8 @@ showQuestion4El.hide();
 showQuestion5El.hide();
 showFinalScoresEl.hide();
 
+// create a button that will start a timer once clicked and presents a question
+// answer multiple choice question by clicking answer.
 showInstructionsEl.on('click', function () {
     showInstructionsEl.hide();
     showQuestion1El.show();
@@ -49,6 +56,27 @@ showAnswerBtns5El.on('click', function() {
     showFinalScoresEl.show();
 });
 
+// function showResponse (event){
+//     event.preventDefault();
+//     console.log(event);
+//     var response = "Your final score is " + yourScoreEl.value + ".";
+//     submissionResponseEl.textContext = response;
+// }
+
+// submitBtnEl.addEventListener("click", showResponse);
+
+// viewHighScoresEl.on('click', function() {
+//     showInstructionsEl.hide();
+//     showQuestion1El.hide();
+//     showQuestion2El.hide();
+//     showQuestion3El.hide();
+//     showQuestion4El.hide();
+//     showQuestion5El.hide();
+//     showFinalScoresEl.hide();
+// });
+
+// timer that starts when clicking start quiz button. info gathered from even listener activities and stackoverflow examples
+
 document.getElementById("startQuiz").addEventListener("click", function () {
     var secondsleft = 75;
 
@@ -66,7 +94,8 @@ document.getElementById("startQuiz").addEventListener("click", function () {
 });
 
 
-// answer multiple choice question by clicking answer.
+
+
 // once answer is chosen screen will say "correct" or "wrong" then list another question
 // if answer is incorrect then time will be subtracted from clock
 // quiz ends when timer reaches 0 or when questeds are all answered
